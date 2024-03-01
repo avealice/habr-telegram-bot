@@ -41,22 +41,6 @@ async def parse_habr(period: str) -> dict:
             pages[hub].add(page)
     return pages
 
-# async def parse_habr_daily() -> dict:
-#     pages = {hub: set() for hub in hubs}
-#     for hub in pages:
-#         page = await get_page(hub, "daily")
-#         if page:
-#             pages[hub].add(page)
-#     return pages
-#
-# async def parse_habr_weekly() -> dict:
-#     pages = {hub: set() for hub in hubs}
-#     for hub in pages:
-#         page = await get_page(hub, "weekly")
-#         if page:
-#             pages[hub].add(page)
-#     return pages
-
 async def get_page(hub: str, period: str) -> str | None:
     url = f"https://habr.com/ru/hub/{hub}/top/{period}/"
     try:
